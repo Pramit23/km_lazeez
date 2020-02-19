@@ -59,11 +59,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
 					<div class="contact-grid agileits">
 						<h4>DROP US A LINE </h4>
-						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
+						<form action="mail.php" method="post"> 
+							<input type="text" name="name" placeholder="Name" required="">
+							<input type="email" name="email" placeholder="Email" required=""> 
+							<input type="text" name="phone" placeholder="Phone Number" required="">
+							<input type="text" name="subject" placeholder="Subject" required="">
+							<textarea name="message" placeholder="Message..." required=""></textarea>
 							<input type="submit" value="Submit" >
 						</form> 
 					</div>

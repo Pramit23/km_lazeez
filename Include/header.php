@@ -49,9 +49,8 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
+								<li>	<a href="foods.php">Menu</a>
+									<!--<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
 											
 											<div class="col-sm-3">
@@ -89,7 +88,7 @@
 											</div> 
 											<div class="clearfix"></div>
 										</div>
-									</ul>
+									</ul>-->
 								</li>
 								<li><a href="about.php">About Us</a></li> 
 								<!--<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Index <span class="caret"></span></a>
@@ -100,7 +99,9 @@
 								</li> -->
 								<li><a href="icons.php">Announcement</a></li>
 								<li><a href="events.php">Our Events</a></li>
-								<li><a href="reservation.php">Reservation</a></li> 
+								<!--	
+								<li><a href="reservation.php">Reservation</a></li>
+								-->
 								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>

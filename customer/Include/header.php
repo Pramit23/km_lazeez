@@ -1,13 +1,4 @@
-<?php
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-   header("location: customer/index.php");
-    exit;
-}
-?>
+
 <div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
@@ -22,9 +13,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 
+							
 							<li class="head-dpdn">
 								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
@@ -32,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 							<li class="head-dpdn">
-							<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+							<a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
 							</li> 	
 							<li class="head-dpdn">
 							<a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>							
