@@ -49,7 +49,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
-								<li>	<a href="foods.php">Menu</a>
+								<li><a href="foods.php">Menu</a>
 									<!--<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
 											

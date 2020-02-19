@@ -32,6 +32,59 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
     <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
     <!-- //web-fonts -->
+    <style>
+        .gallery {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            -webkit-column-width: 33%;
+            -moz-column-width: 33%;
+            column-width: 33%;
+        }
+
+        .gallery .pics {
+            -webkit-transition: all 350ms ease;
+            transition: all 350ms ease;
+        }
+
+        .gallery .animation {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        @media (max-width: 450px) {
+            .gallery {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+                -webkit-column-width: 100%;
+                -moz-column-width: 100%;
+                column-width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .btn.filter {
+                padding-left: 1.1rem;
+                padding-right: 1.1rem;
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+            var selectedClass = "";
+            $(".filter").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#gallery").fadeTo(100, 0.1);
+                $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn().addClass('animation');
+                    $("#gallery").fadeTo(300, 1);
+                }, 300);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -64,347 +117,138 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
             <h3 class="w3ls-title w3ls-title1">Check our Foods</h3>
             <h5 class="text-center">Our Awesome Foods</h5>
 
+            <!-- Grid row -->
             <div class="row">
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="https://delibitecatering.com/wp-content/uploads/2019/06/Mixed-Raita-Deli-Bite-Catering.jpg">
-                                <img src="https://delibitecatering.com/wp-content/uploads/2019/06/Mixed-Raita-Deli-Bite-Catering.jpg"
-                                    class="img-responsive" alt="Image">
-                                </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="https://delibitecatering.com/wp-content/uploads/2019/06/Mixed-Raita-Deli-Bite-Catering.jpg">MIXED
-                                        RAITA</a>
-                                </h2>
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    MIXED RAITA
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 60</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- Grid column -->
+                <div class="col-md-12 d-flex justify-content-center mb-5">
+                    <center>
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                            data-rel="all">All</button>
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                            data-rel="1">Mountains</button>
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                            data-rel="2">Sea</button>
+                    </center>
                 </div>
-                <!--End Post Single-->
-
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/52">
-                                <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071819_plain_raita.jpg"
-                                    class="img-responsive" alt="Image">
-                            </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/52">PLAIN
-                                        RAITA</a>
-                                </h2>
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    PLAIN RAITA
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 50</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/52"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Post Single-->
-
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/51">
-                                <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071830_onion-rings-salad.jpg"
-                                    class="img-responsive" alt="Image">
-                            </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/51">ONION
-                                        SALAD</a>
-                                </h2>
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    ONION SALAD
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 50</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/51"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Post Single-->
-
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/50">
-                                <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071842_green_salad.jpg"
-                                    class="img-responsive" alt="Image">
-                            </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/50">GREEN
-                                        SALAD</a>
-                                </h2>
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    GREEN SALAD
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 50</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/50"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Post Single-->
-
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/49">
-                                <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071717_chana-masala.jpg"
-                                    class="img-responsive" alt="Image">
-                            </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/49">CHANA
-                                        MASLA</a>
-                                </h2>
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    CHANA MASLA
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 70</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/49"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Post Single-->
-
-                <!--Start Post Single-->
-                <div class="col-md-4">
-                    <div class="blog-post-single fix" style="box-shadow: 0 0 10px #bcc6d0;">
-                        <div class="post-media lfood">
-                            <a href="">
-                                <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071727_chicken_dal_makhni.jpg"
-                                    class="img-responsive" alt="Image">
-                            </a>
-                        </div>
-                        <div class="blog-details">
-                            <div class="post-meta">
-                                <p>
-                                    <a href=""><i class="icofont icofont-clock-time"></i> Jan 07, 2020</a>
-                                </p>
-                                <h2 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/48">DAL
-                                        MAKHANI(EGG+CHICKEN)</a>
-                                </h2>
-
-                            </div>
-                            <div class="post-content">
-                                <p>
-                                    DAL MAKHANI(EGG+CHICKEN)
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-top: 20px;">
-                                        <b>Price : </b> <span class="base-color">₹ 120</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-btn">
-                                            <a href="http://lazeez.softwareretailsolutions.com/foodDetails/48"
-                                                style="color: #fff;">View
-                                                Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Post Single-->
-
+                <!-- Grid column -->
 
             </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="gallery" id="gallery">
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 2">
+                    <img class="img-fluid"
+                        src="https://www.bing.com/th?id=OIP.1VllOlIaMNdQqxTTP5nT-gHaDt&pid=Api&rs=1"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 1">
+                    <img class="img-fluid" src="https://www.bing.com/th?id=OIP.NWqDqY03A8J3qVFM8IHfTAHaFj&pid=Api&rs=1"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 1">
+                    <img class="img-fluid" src="https://www.bing.com/th?id=OIP.YnYQ8aBo0Z8OJbll0nm9pQHaGG&pid=Api&w=1600&h=1318&rs=1"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 2">
+                    <img class="img-fluid"
+                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 2">
+                    <img class="img-fluid"
+                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="mb-3 pics animation all 1">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+                        alt="Card image cap">
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
         </div>
-    </div>
-    <!-- //careers-page -->
-    <!-- subscribe -->
-    <div class="subscribe agileits-w3layouts">
-        <div class="container">
-            <div class="col-md-6 social-icons w3-agile-icons">
-                <h4>Keep in touch</h4>
-                <ul>
-                    <li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-                    <li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
-                    <li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-                    <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-                    <li><a href="#" class="fa fa-rss icon rss"> </a></li>
-                </ul>
-                <ul class="apps">
-                    <li>
-                        <h4>Download Our app : </h4>
-                    </li>
-                    <li><a href="#" class="fa fa-apple"></a></li>
-                    <li><a href="#" class="fa fa-windows"></a></li>
-                    <li><a href="#" class="fa fa-android"></a></li>
-                </ul>
-            </div>
-            <div class="col-md-6 subscribe-right">
-                <h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>
-                <form action="#" method="post">
-                    <input type="email" name="email" placeholder="Enter your Email..." required="">
-                    <input type="submit" value="Subscribe">
-                    <div class="clearfix"> </div>
-                </form>
-                <img src="images/i1.png" class="sub-w3lsimg" alt="" />
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!-- //subscribe -->
-    <!-- footer -->
-    <?php
+        <!-- //careers-page -->
+
+        <!-- footer -->
+        <?php
     include("include/footer.php");
     ?>
-    <!-- //footer -->
-    <!-- cart-js -->
-    <script src="js/minicart.js"></script>
-    <script>
-        w3ls.render();
+        <!-- //footer -->
+        <!-- cart-js -->
+        <script src="js/minicart.js"></script>
+        <script>
+            w3ls.render();
 
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-            var items, len, i;
+            w3ls.cart.on('w3sb_checkout', function (evt) {
+                var items, len, i;
 
-            if (this.subtotal() > 0) {
-                items = this.items();
+                if (this.subtotal() > 0) {
+                    items = this.items();
 
-                for (i = 0, len = items.length; i < len; i++) {}
-            }
-        });
-    </script>
-    <!-- //cart-js -->
-    <!-- start-smooth-scrolling -->
-    <script src="js/SmoothScroll.min.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
+                    for (i = 0, len = items.length; i < len; i++) {}
+                }
             });
-        });
-    </script>
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            /*
-            var defaults = {
-            	containerID: 'toTop', // fading element id
-            	containerHoverID: 'toTopHover', // fading element hover id
-            	scrollSpeed: 1200,
-            	easingType: 'linear' 
-            };
-            */
+        </script>
+        <!-- //cart-js -->
+        <!-- start-smooth-scrolling -->
+        <script src="js/SmoothScroll.min.js"></script>
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
 
-            $().UItoTop({
-                easingType: 'easeOutQuart'
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
             });
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                	containerID: 'toTop', // fading element id
+                	containerHoverID: 'toTopHover', // fading element hover id
+                	scrollSpeed: 1200,
+                	easingType: 'linear' 
+                };
+                */
 
-        });
-    </script>
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap core JavaScript
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+
+            });
+        </script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
