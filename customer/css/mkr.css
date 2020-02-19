@@ -1,0 +1,81 @@
+/* MRk CSS Custom Chnages Begins */
+/* Author : Er. Mrigank */
+/* Url : https://www.facebook.com/mrigankkumar.rai1 */
+
+.logoimg img{
+    width: 230px;
+    height: auto;
+    margin-top: 20px;
+}
+@media all and (max-width:768px) {
+    .logoimg img{
+    width: 150px;
+    height: auto;  
+}
+}
+.capitall{
+    text-transform: uppercase;
+}
+.reservation-form input {
+    height: 50px;
+}
+.form-control {
+    border: 1px solid 
+#e2e2e2;
+-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0) inset;
+box-shadow: 0 0px 0px
+    rgba(0, 0, 0, 0) inset;
+    border-radius: 2px;
+}
+.opening-schedule {
+    padding: 40px 60px;
+    border-radius: 2px;
+    background-color: #FF214F !important;
+}
+.opening-schedule {
+    padding: 40px 60px;
+    border-radius: 2px;
+    background-color: #FF214F;
+}
+.opening-info {
+    margin: 0 0 30px;
+}
+.opening-info h4, .help-line h4 {
+    font-weight: 700;
+    color: 
+    #fff;
+}
+
+.opening-info p, .help-line p {
+    font-weight: 500;
+    color: #fff;
+    line-height: 24px;
+}
+.opening-info h4, .help-line h4 {
+    font-weight: 700;
+    color: 
+    #fff;
+}
+.reservation-form button {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 30px;
+    color: #fff;
+background-color:
+    #FF214F !important;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+}
+.latest-blog-area .blog-post-single {
+    margin: 0 0 40px;
+}
+
+
+
+
+
+/* 
+
+*/
+/* MRk CSS Custom Chnages End */
