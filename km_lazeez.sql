@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2020 at 07:34 AM
+-- Generation Time: Mar 02, 2020 at 09:27 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -25,6 +25,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`) VALUES
+(1, 'admin@gmail.com', '123'),
+(2, 'red@gmail.com', '$2y$10$jfVDX.gM4RPpY0/uSzgfSOFijRha.zyJ.jGejj2zYc9Asbm5Cg17.'),
+(3, 'blue@gmail.com', '$2y$10$Vhful.u1a3inl4O0vgjwEeVpf4.H78NqGiVdt.2VrEL1JzgknfKj2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`) VALUES
+(1, 'Breakfast');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -40,12 +79,25 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(2, 'adda', '$2y$10$qUNCy/FReYSlZTUzv2DQqO.WOQSo22ih.SWJbu7wA0WDvQU9DtrUS', '2020-02-19 11:34:10'),
-(3, 'admin@gmail.com', '$2y$10$WRMxKqTKLcyftiZKLBKrnu.dbAnep9.iwCFvJq5oe2AFZ0zoJy9gG', '2020-02-19 11:46:54');
+(2, 'adda', '7b4d994bc8df5a7e455fd27a534c202e', '2020-02-19 11:34:10'),
+(3, 'admin@gmail.com', '7b4d994bc8df5a7e455fd27a534c202e', '2020-02-19 11:46:54'),
+(4, 'Pramit', '$2y$10$f7p3Lp4DjfnGa3ezRZHBAug30GbMVnk.uaTEbSze2oR8yEKGl.Lia', '2020-02-26 10:47:22');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -59,10 +111,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

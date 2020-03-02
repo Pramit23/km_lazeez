@@ -7,7 +7,6 @@
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
-						
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
@@ -23,7 +22,6 @@
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
-						
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
@@ -49,59 +47,11 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
-								<li><a href="foods.php">Menu</a>
-									<!--<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Food Gallery</h6>  
-													<li><a href="foods.php">Our Food</a></li> 
-												
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="menu.php">Breakfast</a></li> 
-													<li><a href="menu.php">Lunch</a></li> 
-													<li><a href="menu.php">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="menu.php">Indian Recipes</a></li> 
-													<li><a href="menu.php">American Recipes</a></li> 
-													<li><a href="menu.php">French Recipes</a></li> 
-													<li><a href="menu.php">Italian Recipes</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="menu.php">Diet</a></li> 
-													<li><a href="menu.php">Mini</a></li> 
-													<li><a href="menu.php">Regular</a></li> 
-													<li><a href="menu.php">Special</a></li> 
-												</ul>
-											</div> 
-											<div class="clearfix"></div>
-										</div>
-									</ul>-->
-								</li>
+                                <li><a href="foods.php">Menu</a></li>
 								<li><a href="about.php">About Us</a></li> 
-								<!--<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Index <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.php">Announcement</a></li>
-										<li><a href="codes.php">Our Events</a></li>     
-									</ul>
-								</li> -->
 								<li><a href="icons.php">Announcement</a></li>
 								<li><a href="events.php">Our Events</a></li>
-								<!--	
-								<li><a href="reservation.php">Reservation</a></li>
-								-->
+								<li><a href="reservation.php">Reservation</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>

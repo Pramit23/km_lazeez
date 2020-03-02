@@ -1,4 +1,3 @@
-
 <div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
@@ -8,24 +7,19 @@
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
-								<a><i class="fa fa-user" aria-hidden="true"></i> <?php echo htmlspecialchars($_SESSION["username"]); ?></a>
-							</li> 
-							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="user_offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="user_help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 							<li class="head-dpdn">
-							<a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
-							</li> 	
-							<li class="head-dpdn">
-							<a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>							
-							</li> 
+								<a href="user_logout.php"><i class="fa fa-question-circle" aria-hidden="true"></i> 
+								logout</a>
+							</li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
@@ -49,61 +43,16 @@
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="home.php">Home</a></li>	
+								<li><a href="home.php">Home</a></li>
+                                <li><a href="user_foods.php">Menu</a></li> 
 								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Food Gallery</h6>  
-													<li><a href="foods1.php">Our Food</a></li> 
-												
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="menu1.php">Breakfast</a></li> 
-													<li><a href="menu1.php">Lunch</a></li> 
-													<li><a href="menu1.php">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="menu1.php">Indian Recipes</a></li> 
-													<li><a href="menu1.php">American Recipes</a></li> 
-													<li><a href="menu1.php">French Recipes</a></li> 
-													<li><a href="menu1.php">Italian Recipes</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-3">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="menu1.php">Diet</a></li> 
-													<li><a href="menu1.php">Mini</a></li> 
-													<li><a href="menu1.php">Regular</a></li> 
-													<li><a href="menu1.php">Special</a></li> 
-												</ul>
-											</div> 
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li><a href="about1.php">About Us</a></li> 
-								<!--<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Index <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.php">Announcement</a></li>
-										<li><a href="codes.php">Our Events</a></li>     
-									</ul>
-								</li> -->
-								<li><a href="icons1.php">Announcement</a></li>
-								<li><a href="events1.php">Our Events</a></li>
-								<li><a href="reservation1.php">Reservation</a></li> 
-								<li><a href="contact1.php">Contact Us</a></li>
+								
+								<li><a href="user_about.php">About Us</a></li> 
+							
+								<li><a href="user_icons.php">Announcement</a></li>
+								<li><a href="user_events.php">Our Events</a></li>
+								<li><a href="user_reservation.php">Reservation</a></li> 
+								<li><a href="user_contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 

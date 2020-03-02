@@ -24,7 +24,8 @@
 					<ul>  
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
-						<li><a href="login.php">Return Policy</a></li> 
+						<li><a href="login.php">Return Policy</a></li>
+				        <li><a href="login.php">Return Policy</a></li>
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">

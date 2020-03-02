@@ -70,6 +70,34 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
                 padding-right: 1.1rem;
             }
         }
+
+        .blog-post-single {
+            box-shadow: 0 0 10px #bcc6d0;
+        }
+
+        .m-0 {
+            font-size: 17px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .mr1 {
+            text-align: center;
+        }
+
+        .deep {
+            margin-top: 20px;
+        }
+
+        .dip {
+            text-align: center;
+        }
+
+        .btn {
+            margin-bottom: 5px;
+            background-color: #FF214F;
+            font-weight: 500;
+        }
     </style>
     <script>
         $(function () {
@@ -113,85 +141,266 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
     <!-- //breadcrumb -->
     <!-- careers-page -->
     <div class="careers about">
-        <div class="container">
-            <h3 class="w3ls-title w3ls-title1">Check our Foods</h3>
-            <h5 class="text-center">Our Awesome Foods</h5>
+		<div class="container"> 
+			<h3 class="w3ls-title w3ls-title1">Check our Foods</h3> 
+			<h5 class="text-center">Our Awesome Foods</h5>
+			
+			<div class="row deep">
+                                   
+                                                           
+                        <!--Start Post Single-->
+                       <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
 
-            <!-- Grid row -->
-            <div class="row">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
+                         <!--Start Post Single-->
+                          <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
 
-                <!-- Grid column -->
-                <div class="col-md-12 d-flex justify-content-center mb-5">
-                    <center>
-                        <button type="button" class="btn btn-outline-black waves-effect filter"
-                            data-rel="all">All</button>
-                        <button type="button" class="btn btn-outline-black waves-effect filter"
-                            data-rel="1">Mountains</button>
-                        <button type="button" class="btn btn-outline-black waves-effect filter"
-                            data-rel="2">Sea</button>
-                    </center>
-                </div>
-                <!-- Grid column -->
+                                        
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
 
+                                                                                            
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                       
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
+                         <!--Start Post Single-->
+                          <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+
+                                        
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+
+                                                                                            
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                       
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                       <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
             </div>
-            <!-- Grid row -->
+                        
+       
+                  <div class="row deep">      
+                           <!--Start Post Single-->
+                       <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
 
-            <!-- Grid row -->
-            <div class="gallery" id="gallery">
+                                        
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
 
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid"
-                        src="https://www.bing.com/th?id=OIP.1VllOlIaMNdQqxTTP5nT-gHaDt&pid=Api&rs=1"
-                        alt="Card image cap">
+                                                                                            
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                       
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                         <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
+                         <!--Start Post Single-->
+                          <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+
+                                        
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+
+                                                                                            
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                       
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
+                         <!--Start Post Single-->
+                          <div class="col-md-4">
+                           <div class="blog-post-single fix">
+                                <div class="post-media lfood">
+                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+
+                                        
+                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+
+                                                                                            
+                                    </a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="post-meta">
+                                       
+                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
+                                        </h6>
+
+                                    </div>
+                                    <div class="post-content">
+                                        <p class="mr1">
+                                            MIXED RAITA
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6 dip" style="margin-top: 10px;">
+                                                <b>Price : </b> <span class="base-color">₹ 60</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="default-btn">
+                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
+                                                        Details</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        <!--End Post Single-->
+
+                    
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://www.bing.com/th?id=OIP.NWqDqY03A8J3qVFM8IHfTAHaFj&pid=Api&rs=1"
-                        alt="Card image cap">
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://www.bing.com/th?id=OIP.YnYQ8aBo0Z8OJbll0nm9pQHaGG&pid=Api&w=1600&h=1318&rs=1"
-                        alt="Card image cap">
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-                        alt="Card image cap">
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                        alt="Card image cap">
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
-                        alt="Card image cap">
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-        </div>
-        <!-- //careers-page -->
-
+		</div>
+	</div>
         <!-- footer -->
-        <?php
-    include("include/footer.php");
+
+
+    <?php
+   include("include/footer.php");
     ?>
         <!-- //footer -->
         <!-- cart-js -->

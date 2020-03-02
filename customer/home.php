@@ -1,14 +1,7 @@
-
-<?php
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
-?>
+<!--
+Author: Er. Mrigank.
+ Url : https://www.facebook.com/mrigankkumar.rai1 */
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +32,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<!-- banner -->
 	<div class="banner">
 		<!-- header -->
-	<?php include('Include/header.php') ?>
-
+		<?php
+		include("Include/header.php");
+		?>
 		<!-- //header-end --> 
 		<!-- banner-text -->
 		<div class="banner-text">	
