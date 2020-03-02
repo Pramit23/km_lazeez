@@ -3,42 +3,56 @@
 require_once "include/config.php";
  
 // Define variables and initialize with empty values
-$category= "";
-$category_err = "";
+$name =  "";
+$name_err= "";
  
 // Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Get hidden input value
-    $id = $_POST["id"];
-    
+if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
-    $input_category = trim($_POST["category_name"]);
-    if(empty($input_category)){
-        $category_err = "Please enter a name.";
-    } elseif(!filter_var($input_category, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $category_err = "Please enter a valid category name.";
+    $input_name = trim($_POST["name"]);
+    if(empty($input_name)){
+        $name_err = "Please enter a name.";
+    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $name_err = "Please enter a valid name.";
     } else{
-        $category = $input_category;
+        $name = $input_name;
     }
     
-    
+    // Validate address
+    /*
+    $input_address = trim($_POST["address"]);
+    if(empty($input_address)){
+        $address_err = "Please enter an address.";     
+    } else{
+        $address = $input_address;
+    }
+    */
+    // Validate salary
+    /*
+    $input_salary = trim($_POST["salary"]);
+    if(empty($input_salary)){
+        $salary_err = "Please enter the salary amount.";     
+    } elseif(!ctype_digit($input_salary)){
+        $salary_err = "Please enter a positive integer value.";
+    } else{
+        $salary = $input_salary;
+    }
+    */
     // Check input errors before inserting in database
-    if(empty($category_err)){
-        // Prepare an update statement
-        $sql = "UPDATE category SET category_name=? WHERE id=?";
+    if(empty($name_err)){
+        // Prepare an insert statement
+        $sql = "INSERT INTO category (category_name) VALUES (?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_cat, $param_id);
+            mysqli_stmt_bind_param($stmt, "s", $param_name);
             
             // Set parameters
-            $param_cat = $category;
-           
-            $param_id = $id;
-            
+            $param_name = $name;
+        
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Records updated successfully. Redirect to landing page
+                // Records created successfully. Redirect to landing page
                 header("location: foodcat.php");
                 exit();
             } else{
@@ -52,53 +66,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     
     // Close connection
     mysqli_close($link);
-} else{
-    // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
-        // Get URL parameter
-        $id =  trim($_GET["id"]);
-        
-        // Prepare a select statement
-        $sql = "SELECT * FROM category WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
-            
-            // Set parameters
-            $param_id = $id;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
-    
-                if(mysqli_num_rows($result) == 1){
-                    /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    
-                    // Retrieve individual field value
-                    $category = $row["category_name"];
-                  
-                } else{
-                    // URL doesn't contain valid id. Redirect to error page
-                    header("location: error-404.php");
-                    exit();
-                }
-                
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-        }
-        
-        // Close statement
-        mysqli_stmt_close($stmt);
-        
-        // Close connection
-        mysqli_close($link);
-    }  else{
-        // URL doesn't contain id parameter. Redirect to error page
-        header("location: error-404.php");
-        exit();
-    }
 }
 ?>
 <!DOCTYPE html>
@@ -140,16 +107,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Update Category</h4>
-                                    <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>"
-                                        method="post">
-                                        <div class="form-group <?php echo (!empty($category_err)) ? 'has-error' : ''; ?>">
-                                            <input type="text" name="category_name" class="form-control"
-                                                value="<?php echo $category; ?>">
-                                            <span class="help-block"><?php echo $category_err;?></span>
+                                    <h4 class="card-title">Create Category</h4>
+                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                                            <label>Name</label>
+                                            <input type="text" name="name" class="form-control"
+                                                value="<?php echo $name; ?>">
+                                            <span class="help-block"><?php echo $name_err;?></span>
                                         </div>
-                                      
-                                        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                                        
                                         <input type="submit" class="btn btn-primary" value="Submit">
                                         <a href="foodcat.php" class="btn btn-default">Cancel</a>
                                     </form>

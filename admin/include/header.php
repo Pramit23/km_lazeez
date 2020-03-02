@@ -31,11 +31,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               </a>
               
             </li>
-            <li class="nav-item d-none d-lg-block full-screen-link">
-              <a class="nav-link">
-                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-              </a>
-            </li>
+
             <li class="nav-item nav-logout d-none d-lg-block">
               <a class="nav-link" href="logout.php">
                 <i class="mdi mdi-power"></i>

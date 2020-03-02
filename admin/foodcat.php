@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    <script src="https://kit.fontawesome.com/02c69b64af.js" crossorigin="anonymous"></script>
     <style>
         .text-muted {
             text-align: center;
@@ -40,8 +41,8 @@
                         <h2> Food Category </h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Food Category</li>
                             </ol>
                         </nav>
                     </div>
@@ -57,50 +58,51 @@
                                 </div>
 
                                 <div class="card-body ">
-                                    <?php
-                                    require_once "include/config.php";
-
-                                    //Attempt select query execution
-                                    $sql ="SELECT * FROM category";
-                                    if($result=mysqli_query($link,$sql)){
-                                        if(mysqli_num_rows($result)>0){
-                                            echo "<table class='table table-striped'>";
-
-echo   '<thead>';
-      echo '<tr>';
-      echo  "<th scope='col'>Id</th>";
-      echo  "<th scope='col'>Name</th>";
-      echo  "<th scope='col'>status</th>";
-      echo  "<th scope='col'>Action</th>";
-     echo '</tr>';
-echo  '</thead>';
-echo    '<tbody>';
-while($row=mysqli_fetch_array($result)){
-    echo       '<tr>';
-    echo        "<th scope='col'>".$row['id']."</th>";
-    echo            "<th scope='col'>".$row['category_name']."</th>";
-    echo          "<th scope='col'>";
-    echo          "<a class='btn btn-info btn-sm btn-square'>Active</a>";
-    echo    "</th>";
-    echo          "<th scope='col'>";
-    echo   "<a href='updatecat.php=".$row['id']."' class='btn btn-info btn-sm btn-square' >Edit</a>";
-    
-    echo   "<a href='deletecat.php=".$row['id']."' class='btn btn-danger btn-sm btn-square'>Delete</a>";
-    echo            "</th>";
-    echo   "</tr>";
-}
-echo "</tbody>"; 
-echo"</table>";
-                                            mysqli_free_result($result);
-                                        }else{
-                                            echo "<p class='lead'><em>No records were found.</em></p>";
-                                        }
-                                    }else{
-                                        echo "ERROR:Could not execute $sql.".mysqli_error($link);
-                                    }
-                                    mysqli_close($link);
-
-                        ?>
+                                <?php
+                    // Include config file
+                    require_once "include/config.php";
+                    
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM category";
+                    if($result = mysqli_query($link, $sql)){
+                        if(mysqli_num_rows($result) > 0){
+                            echo "<table class='table table-bordered table-striped'>";
+                                echo "<thead>";
+                                    echo "<tr>";
+                                        echo "<th>#</th>";
+                                        echo "<th>Name</th>";
+                                        echo "<th>Action</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                        echo "<td>" . $row['id'] . "</td>";
+                                        echo "<td>" . $row['category_name'] . "</td>";
+                                       
+                                        echo "<td>";
+                                            //echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<i class='fas fa-edit'><a href='updatecat.php?id=". $row['id'] ."'> Edit</a></i>";
+                                            echo "&nbsp";
+                                            echo "&nbsp";
+                                            echo "<i class='fas fa-trash-alt'><a href='deletecat.php?id=". $row['id'] ."'> Delete</a></i>";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+                            // Free result set
+                            mysqli_free_result($result);
+                        } else{
+                            echo "<p class='lead'><em>No records were found.</em></p>";
+                        }
+                    } else{
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                    }
+ 
+                    // Close connection
+                    mysqli_close($link);
+                    ?>
                                 </div>
 
                             </div>
