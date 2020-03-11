@@ -39,9 +39,9 @@ Author: Er. Mrigank.
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
+			<center><h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2></center>
 				<div class="agileits_search">
-					<form action="#" method="post">
+					<!--<form action="#" method="post">
 						<input name="Search" type="text" placeholder="Enter Your Area Name" required="">
 						<select id="agileinfo_search" name="agileinfo_search" required="">
 							<option value="">Popular Cities</option>
@@ -53,7 +53,7 @@ Author: Er. Mrigank.
 							<option value="all">Other</option>
 						</select>
 						<input type="submit" value="Search">
-					</form>
+					</form>-->
 				</div> 
 			</div>
 		</div>

@@ -141,323 +141,123 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
     <!-- //breadcrumb -->
     <!-- careers-page -->
     <div class="careers about">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Check our Foods</h3> 
-			<h5 class="text-center">Our Awesome Foods</h5>
-			
-			<div class="row deep">
-                                   
-                                                           
-                        <!--Start Post Single-->
-                       <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
+        <div class="container">
+            <h3 class="w3ls-title w3ls-title1">Check our Foods</h3>
 
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-                         <!--Start Post Single-->
-                          <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+            <div class="row deep">
+                <!--Start Post Single-->
+                <div class="col-md-4">
 
-                                        
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+                    <div class='blog-post-single fix'>
+                     
+                            <?php
+                        include("Include/config.php");
 
-                                                                                            
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                       
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
+                        $sql = "SELECT * FROM foodgallery";
 
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-                         <!--Start Post Single-->
-                          <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
+                        $result = mysqli_query($link, $sql);
 
-                                        
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
+                        if (mysqli_num_rows($result) > 0) {
 
-                                                                                            
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                       
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
+                        while($row = mysqli_fetch_assoc($result)) {
+                          echo    "<div class='post-media lfood'>";
+                          echo   '<img class="img-responsive" src="admin/images/' . $row['image'] . '">';                         
+                           echo  "</div>";
+                          echo  "<div class='blog-details'>";
+                          echo "<div class='post-meta'>";            
+                          echo "<h6 class='m-0'> " . $row["name"]. "</h6>";  
+                            echo "</div>";
+                           echo "<div class='post-content'>";
+                           echo  "<p class='mr1'>" . $row["category"]. "</p>";
+                                            
+                           echo "<div class='row'>";
+                           echo  "<div class='col-md-6 dip' style='margin-top: 10px;'>";
+                            echo "<b>Price : </b> <span class='base-color'>₹ " . $row["price"]. "</span>";
+                            echo "</div>";
+                        echo  "<div class='col-md-6'>";
+                        echo  "<div class='default-btn'>";
+                        echo   "<a href='login.php' style='color: #fff;
+                                     <button type='submit' class='btn btn-danger'>View
+                                                        Details</button></a>";
+                         echo           "</div>";
+                          echo          "</div>";
+                           echo     "</div>";  
+                           echo          "</div>";
+                           echo    "</div>";
+                            echo "</div>";
+                       echo "</div>";
+                    }
+                }else {
+                    echo "There are no records available";
+                }
+        ?>
+                            <!--End Post Single-->
+                        </div>
 
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                       <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-            </div>
-                        
-       
-                  <div class="row deep">      
-                           <!--Start Post Single-->
-                       <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
-
-                                        
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
-
-                                                                                            
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                       
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
-
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                         <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-                         <!--Start Post Single-->
-                          <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
-
-                                        
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
-
-                                                                                            
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                       
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
-
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-                         <!--Start Post Single-->
-                          <div class="col-md-4">
-                           <div class="blog-post-single fix">
-                                <div class="post-media lfood">
-                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">
-
-                                        
-                                            <img src="http://lazeez.softwareretailsolutions.com/assets/user/images/foods/202001071822_mixed_veg_raita.jpg" class="img-responsive" alt="Image">
-
-                                                                                            
-                                    </a>
-                                </div>
-                                <div class="blog-details">
-                                    <div class="post-meta">
-                                       
-                                        <h6 class="m-0"><a href="http://lazeez.softwareretailsolutions.com/foodDetails/53">MIXED RAITA</a>
-                                        </h6>
-
-                                    </div>
-                                    <div class="post-content">
-                                        <p class="mr1">
-                                            MIXED RAITA
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-6 dip" style="margin-top: 10px;">
-                                                <b>Price : </b> <span class="base-color">₹ 60</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="default-btn">
-                                                    <a href="http://lazeez.softwareretailsolutions.com/foodDetails/53" style="color: #fff;"><button type="submit" class="btn btn-danger">View
-                                                        Details</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!--End Post Single-->
-
-                    
+                    </div>
                 </div>
-		</div>
-	</div>
-        <!-- footer -->
+                <!-- footer -->
 
 
-    <?php
+                <?php
    include("include/footer.php");
     ?>
-        <!-- //footer -->
-        <!-- cart-js -->
-        <script src="js/minicart.js"></script>
-        <script>
-            w3ls.render();
+                <!-- //footer -->
+                <!-- cart-js -->
+                <script src=" js/minicart.js"> </script>
+                <script>
+                    w3ls.render();
 
-            w3ls.cart.on('w3sb_checkout', function (evt) {
-                var items, len, i;
+                    w3ls.cart.on('w3sb_checkout', function (evt) {
+                        var items, len, i;
 
-                if (this.subtotal() > 0) {
-                    items = this.items();
+                        if (this.subtotal() > 0) {
+                            items = this.items();
 
-                    for (i = 0, len = items.length; i < len; i++) {}
-                }
-            });
-        </script>
-        <!-- //cart-js -->
-        <!-- start-smooth-scrolling -->
-        <script src="js/SmoothScroll.min.js"></script>
-        <script type="text/javascript" src="js/move-top.js"></script>
-        <script type="text/javascript" src="js/easing.js"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
+                            for (i = 0, len = items.length; i < len; i++) {}
+                        }
+                    });
+                </script> <!-- //cart-js -->
+                <!-- start-smooth-scrolling -->
+                <script src="js/SmoothScroll.min.js"></script>
+                <script type="text/javascript" src="js/move-top.js"></script>
+                <script type="text/javascript" src="js/easing.js"></script>
+                <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
 
-                    $('html,body').animate({
-                        scrollTop: $(this.hash).offset().top
-                    }, 1000);
-                });
-            });
-        </script>
-        <!-- //end-smooth-scrolling -->
-        <!-- smooth-scrolling-of-move-up -->
-        <script type="text/javascript">
-            $(document).ready(function () {
-                /*
-                var defaults = {
-                	containerID: 'toTop', // fading element id
-                	containerHoverID: 'toTopHover', // fading element hover id
-                	scrollSpeed: 1200,
-                	easingType: 'linear' 
-                };
-                */
+                            $('html,body').animate({
+                                scrollTop: $(this.hash).offset().top
+                            }, 1000);
+                        });
+                    });
+                </script>
+                <!-- //end-smooth-scrolling -->
+                <!-- smooth-scrolling-of-move-up -->
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                        	containerID: 'toTop', // fading element id
+                        	containerHoverID: 'toTopHover', // fading element hover id
+                        	scrollSpeed: 1200,
+                        	easingType: 'linear' 
+                        };
+                        */
 
-                $().UItoTop({
-                    easingType: 'easeOutQuart'
-                });
+                        $().UItoTop({
+                            easingType: 'easeOutQuart'
+                        });
 
-            });
-        </script>
-        <!-- //smooth-scrolling-of-move-up -->
-        <!-- Bootstrap core JavaScript
+                    });
+                </script>
+                <!-- //smooth-scrolling-of-move-up -->
+                <!-- Bootstrap core JavaScript
     ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/bootstrap.js"></script>
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="js/bootstrap.js"></script>
 </body>
 
 </html>

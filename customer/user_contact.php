@@ -1,9 +1,51 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+$statusMsg = '';
+$msgClass = '';
+if(isset($_POST['submit'])){
+    // Get the submitted form data
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    
+    // Check whether submitted data is not empty
+    if(!empty($email) && !empty($name) && !empty($subject) && !empty($message)){
+        
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+            $statusMsg = 'Please enter your valid email.';
+            $msgClass = 'errordiv';
+        }else{
+            // Recipient email
+            $toEmail = 'kmlazeezimperial2020@gmail.com';
+            $emailSubject = 'Contact Request Submitted by '.$name;
+            $htmlContent = '<h2>Contact Request Submitted</h2>
+                <h4>Name</h4><p>'.$name.'</p>
+                <h4>Email</h4><p>'.$email.'</p>
+                <h4>Subject</h4><p>'.$subject.'</p>
+                <h4>Message</h4><p>'.$message.'</p>';
+            
+            // Set content-type header for sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            
+            // Additional headers
+            $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
+            
+            // Send email
+            if(mail($toEmail,$emailSubject,$htmlContent,$headers)){
+                $statusMsg = 'Your contact request has been submitted successfully !';
+                $msgClass = 'succdiv';
+            }else{
+                $statusMsg = 'Your contact request submission failed, please try again.';
+                $msgClass = 'errordiv';
+            }
+        }
+    }else{
+        $statusMsg = 'Please fill all the fields.';
+        $msgClass = 'errordiv';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,11 +102,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="contact-grid agileits">
 						<h4>DROP US A LINE </h4>
 						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
-							<input type="submit" value="Submit" >
+							<input type="text" name="name" placeholder="Name" required="">
+							<input type="email" name="email" placeholder="Email" required=""> 
+							<input type="text" name="subject" placeholder="Subject" required="">
+							<textarea name="message" placeholder="Message..." required=""></textarea>
+							<input type="submit" value="Submit"  name="submit">
 						</form> 
 					</div>
 				</div>
@@ -106,8 +148,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>	
 		<!-- map -->
 		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
-		</div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14734.740019308174!2d88.4079468!3d22.5908816!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6460d54716bcf127!2sLazeez%20Express!5e0!3m2!1sen!2sin!4v1583928219366!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>		</div>
 		<!-- //map --> 
 	</div>
 	<!-- //contact -->   

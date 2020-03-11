@@ -1,22 +1,3 @@
-<?php
-  include('include/config.php');
-  $upload_dir = 'images/';
-
-  if(isset($_GET['delete'])){
-		$id = $_GET['delete'];
-		$sql = "select * from foodgallery where id = ".$id;
-		$result = mysqli_query($link, $sql);
-		if(mysqli_num_rows($result) > 0){
-			$row = mysqli_fetch_assoc($result);
-			$image = $row['image'];
-			unlink($upload_dir.$image);
-			$sql = "delete from foodgallery where id=".$id;
-			if(mysqli_query($link, $sql)){
-				header('location:foodgall.php');
-			}
-		}
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,49 +57,30 @@
                                 </div>
                                 <div class="card-body ">
                                     <div class="row">
-                                        <table id="example" class="table table-striped table-bordered"
-                                            style="width:100%">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Name</th>
-                                                    <th>Image</th>
-                                                    <th>
-                                                        <center>Action</center>
-                                                    </th>
-                                                </tr>
-                                            </thead>
+                                       
+                                            <?php 
+                                        
+                                        require_once "include/config.php";
+                                     //   echo "<img src='admin/images/.$row['image'].' class='img-thumbnail' width='200' height='200'>";
+                                        $sql = "SELECT * FROM foodgallery";
+                                        if($result = mysqli_query($link,$sql));
+                                             if(mysqli_num_rows($result)>0){
+                        
+                                                while($row=mysqli_fetch_array($result)){
+                                                echo "<tr>";
+                                                echo "<div class='col-md-2 text-center'>";
+                                                echo "<img src='images/".$row['image']."' class='img-thumbnail' width='200' height='200'>";
+                                                echo "<hr>";
+                                                echo  "<a href='deleteimage.php?id=". $row['id'] ."' 
+                                                class='btn btn-danger btn-sm btn-square mt-2' onclick='return confirm('Are you sure ?')'>Remove</a>";
+                                                echo "</div>";
+                                                echo "</tr>";
+                                            }
 
-                                            <tbody>
-                                                <?php
-                            $sql = "select * from foodgallery";
-                            $result = mysqli_query($link, $sql);
-                    				if(mysqli_num_rows($result)){
-                    					while($row = mysqli_fetch_assoc($result)){
-                          ?>
-                                                <tr>
-                                                    <td><?php echo $row['id'] ?></td>
-                                                    <td><?php echo $row['name'] ?></td>
-
-                                                    <td><img src="<?php echo $upload_dir.$row['image'] ?>"
-                                                            height="100px" width="100px"></td>
-
-                                                    <td class="text-center">
-                                                        <a href="updatefoodgall.php?id=<?php echo $row['id'] ?>"
-                                                            class="btn btn-info"><i class="fa fa-user-edit">Edit</i></a>
-                                                        <a href="foodgall.php?delete=<?php echo $row['id'] ?>"
-                                                            class="btn btn-danger"
-                                                            onclick="return confirm('Are you sure to delete this record?')"><i
-                                                                class="fa fa-trash-alt"></i>Remove</a>
-                                                    </td>
-                                                </tr>
-                                                <?php
-                              }
-                            }
-                          ?>
-                                            </tbody>
-                                        </table>
-
+                                            }
+                                     
+                                      ?>
+                                     
                                     </div>
                                 </div>
                             </div>

@@ -53,7 +53,7 @@
                                     
                                     <button type="submit" class="btn btn-secondary float-right customs-btn-bd"
                                         data-toggle="modal" data-target="#foodCategory">
-                                        <a href="createcat.php"> Add New </a>
+                                        <a href="createfood.php"> Add New </a>
                                     </button>
                                 </div>
 
@@ -69,9 +69,11 @@
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Action</th>";
+                                        echo "<th>#Id</th>";
+                                   
+                                        echo "<th>Category</th>";
+                                    
+                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
@@ -79,7 +81,7 @@
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['category_name'] . "</td>";
-                                       
+                                    
                                         echo "<td>";
                                             //echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<i class='fas fa-edit'><a href='updatecat.php?id=". $row['id'] ."'> Edit</a></i>";
