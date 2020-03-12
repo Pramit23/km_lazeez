@@ -49,8 +49,8 @@
 								<!-- Mega Menu -->
                                 <li><a href="foods.php">Menu</a></li>
 								<li><a href="about.php">About Us</a></li> 
-								<li><a href="icons.php">Announcement</a></li>
-								<li><a href="events.php">Our Events</a></li>
+							<!--	<li><a href="icons.php">Announcement</a></li> -->
+							<!--	<li><a href="events.php">Our Events</a></li> -->
 								<li><a href="reservation.php">Reservation</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 							</ul>

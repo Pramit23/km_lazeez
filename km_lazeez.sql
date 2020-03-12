@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2020 at 05:15 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: Mar 12, 2020 at 01:13 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `password`) VALUES
-(1, 'admin@gmail.com', '123'),
+(1, 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
 (2, 'red@gmail.com', '$2y$10$jfVDX.gM4RPpY0/uSzgfSOFijRha.zyJ.jGejj2zYc9Asbm5Cg17.'),
 (3, 'blue@gmail.com', '$2y$10$Vhful.u1a3inl4O0vgjwEeVpf4.H78NqGiVdt.2VrEL1JzgknfKj2');
 
@@ -59,7 +59,79 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `category_name`) VALUES
-(1, 'Breakfast');
+(1, 'Breakfast'),
+(3, 'Hotdog'),
+(4, 'Great'),
+(5, 'Juice');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodgallery`
+--
+
+CREATE TABLE `foodgallery` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `image` longtext NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `foodgallery`
+--
+
+INSERT INTO `foodgallery` (`id`, `name`, `image`, `category`, `price`) VALUES
+(1, 'RED', '1583920653_8494.jpg', 'South Indian', '500');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodlist`
+--
+
+CREATE TABLE `foodlist` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `category_name` varchar(255) NOT NULL,
+  `price` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `foodlist`
+--
+
+INSERT INTO `foodlist` (`id`, `name`, `category_name`, `price`) VALUES
+(1, 'Bread', 'Breakfast', 100),
+(3, 'Raita', 'South Indian', 100),
+(4, 'Raita', 'South Indian', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `Id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(255) NOT NULL,
+  `person` int(255) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `message` longtext NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Not Approved'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`Id`, `name`, `email`, `phone`, `person`, `date`, `time`, `message`, `status`) VALUES
+(17, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-13', '15:03:00', 'QWERT', '0'),
+(18, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-27', '15:09:00', 'QWER', '0');
 
 -- --------------------------------------------------------
 
@@ -79,7 +151,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(2, 'adda', '7b4d994bc8df5a7e455fd27a534c202e', '2020-02-19 11:34:10'),
+(2, 'adda', '827ccb0eea8a706c4c34a16891f84e7b', '2020-02-19 11:34:10'),
 (3, 'admin@gmail.com', '7b4d994bc8df5a7e455fd27a534c202e', '2020-02-19 11:46:54'),
 (4, 'Pramit', '$2y$10$f7p3Lp4DjfnGa3ezRZHBAug30GbMVnk.uaTEbSze2oR8yEKGl.Lia', '2020-02-26 10:47:22');
 
@@ -98,6 +170,24 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodgallery`
+--
+ALTER TABLE `foodgallery`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodlist`
+--
+ALTER TABLE `foodlist`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `users`
@@ -120,7 +210,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `foodgallery`
+--
+ALTER TABLE `foodgallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `foodlist`
+--
+ALTER TABLE `foodlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`

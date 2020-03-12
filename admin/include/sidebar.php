@@ -38,6 +38,19 @@
             </li>
             
                <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#reservation" aria-expanded="false" aria-controls="food-order">
+                <span class="menu-title">Reservations</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div class="collapse" id="reservation">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="odlist.php">Reservation List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="odhist.php">Reservation history</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#food-order" aria-expanded="false" aria-controls="food-order">
                 <span class="menu-title">Food Order</span>
                 <i class="menu-arrow"></i>
@@ -45,54 +58,15 @@
               </a>
               <div class="collapse" id="food-order">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="odlist.php">order list</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="odhist.php">order history 
-                  </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="odlist.php">Order List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="odhist.php">Order history</a></li>
                 </ul>
               </div>
             </li>
+          
             
-             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#reservation" aria-expanded="false" aria-controls="reservation">
-                <span class="menu-title">Reservation</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-              </a>
-              <div class="collapse" id="reservation">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="reso.php">Reservation Order</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="resl.php">Reservation Log                </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="resp.php">Reservation Page                </a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#events" aria-expanded="false" aria-controls="events">
-                <span class="menu-title">Events</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-              </a>
-              <div class="collapse" id="events">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="eventlist.php">Events lists</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="newevent.php">New Event</a></li>
-                
-                </ul>
-              </div>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#announcement" aria-expanded="false" aria-controls="announcement">
-                <span class="menu-title">Announcement</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-              </a>
-              <div class="collapse" id="announcement">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="categ.php">Category </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="announcement.php">Announcement               </a></li>
-                </ul>
-              </div>
-            </li>
+               
+
             <li class="nav-item sidebar-actions">
               <span class="nav-link">
               </span>
