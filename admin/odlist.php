@@ -53,58 +53,72 @@
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM reservation";
-                    if($result = mysqli_query($link, $sql)){
-                        if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#Id</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Email</th>";
-                                        echo "<th>Phone No.</th>";
-                                        echo "<th>People</th>";
-                                        echo "<th>Date</th>";
-                                        echo "<th>Time</th>";
-                                        echo "<th>Message</th>";
-                                        echo "<th>Status</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<th>" . $row['Id'] . "</th>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>" . $row['phone'] . "</td>";
-                                        echo "<td>" . $row['person'] . "</td>";
-                                        echo "<td>" . $row['date'] . "</td>";
-                                        echo "<td>" . $row['time'] . "</td>";
-                                        echo "<td>" . $row['message'] . "</td>";
-                                        $status =$row['status'];
-                                        if($status =="Approved"){
-                                          echo "<input type='hidden' name='id' value='".$row['id']."' id='recordId'/>";
-                                          echo "<td><button  
-                                          class='chageStatus'class='btn btn-success' value='Active'><a href='#'>Approved</a></button><td>";
+                    if($result = $mysqli->query($sql)){
+                        if($result->num_rows > 0){
+                          ?>
+                          <table class='table table-bordered table-striped'>
+                          <thead>
+                          <tr>
+                               <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Person</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Change Status</th>
+                          </tr>
+                              </thead>
+                          <tbody>
+                          <?php
+                                while($row = $result->fetch_array()){
+                          ?>
+                            <tr>
+                                <td><?php echo $row['Id'] ?></td>
+                                <td><?php echo $row['name'] ?></td>
+                                <td> <?php echo $row['email'] ?></td>
+                                <td><?php echo $row['phone'] ?></td>
+                                <td><?php echo $row['person'] ?></td>
+                                <td><?php echo $row['date']?> </td>
+                                <td><?php echo $row['time'] ?></td>
+                                <td><?php echo $row['message'] ?></td>
+                                <td>
+                                  <?php      
+                                        if($row['status']==1){
+
+                                          echo "<p id=str".$row['Id'].">Approved</p>";                                        
                                         }else{
-                                          echo "<td><button  
-                                          class='chageStatus'class='btn btn-danger' value='InActive'><a href='#'>Not Approved</a></button><td>";                                        }
-                                     
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
-                            echo "</table>";
+                                          echo "<p id=str".$row['Id'].">Not Approved</p>";
+                                        }
+                                  ?>
+                                </td>
+                                <td>
+                                        <select onchange="active_disactive_reserve(this.value,<?php echo $row['Id'] ?>)">
+                                        <option value="1">Approved</option>
+                                        <option value="0">Not Approved</option>
+
+                                </td>
+                                </tr>
+                                <?php
+                                  }
+                                  ?>
+                              </tbody>                            
+                          </table>
+                          <?php
                             // Free result set
-                            mysqli_free_result($result);
+                            $result->free();
                         } else{
                             echo "<p class='lead'><em>No records were found.</em></p>";
                         }
                     } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                        echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
                     }
- 
+                    
                     // Close connection
-                    mysqli_close($link);
-                    ?>
+                    $mysqli->close();
+                    ?> 
                     </div>
                 </div>
             </div>
@@ -123,6 +137,7 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- plugins:js -->
     <script src="vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -139,17 +154,20 @@
     <script src="js/todolist.js"></script>
     <!-- End custom js for this page -->
     <script>
-    jQuery(document).ready(function(){
-       jQuery('.chageStatus').on('click',function(){
-          $.ajax({
-            url:'changeStatus.php',
-            type:'post',
-            data:{'status':jQuery(this).val(),id:jQuery('#recordId').val()},
-          }).success(function(response){
-              alert(response);
-          });
-       });
-    });
+    function active_disactive_reserve(val,Id) {
+      $.ajax({
+        type: "POST",
+        url: "change.php",
+        data:{val:val,Id:Id},
+        success:function(result){
+          if(result==1){
+           $('#str' +Id).html("Appoved");
+          }else{
+            $('#str' +Id).html("Not Appoved");
+          }
+        }
+      });
+    }
   </script>
   </body>
 </html>

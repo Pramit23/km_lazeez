@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2020 at 01:13 PM
+-- Generation Time: Mar 13, 2020 at 01:30 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -61,8 +61,7 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `category_name`) VALUES
 (1, 'Breakfast'),
 (3, 'Hotdog'),
-(4, 'Great'),
-(5, 'Juice');
+(4, 'Great');
 
 -- --------------------------------------------------------
 
@@ -83,7 +82,7 @@ CREATE TABLE `foodgallery` (
 --
 
 INSERT INTO `foodgallery` (`id`, `name`, `image`, `category`, `price`) VALUES
-(1, 'RED', '1583920653_8494.jpg', 'South Indian', '500');
+(10, 'Dosa', '1584082354_9894.jpg', 'south indian', '200');
 
 -- --------------------------------------------------------
 
@@ -110,6 +109,19 @@ INSERT INTO `foodlist` (`id`, `name`, `category_name`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `Id` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Price` int(255) NOT NULL,
+  `Quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -130,8 +142,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Id`, `name`, `email`, `phone`, `person`, `date`, `time`, `message`, `status`) VALUES
-(17, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-13', '15:03:00', 'QWERT', '0'),
-(18, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-27', '15:09:00', 'QWER', '0');
+(17, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-13', '15:03:00', 'QWERT', '1'),
+(18, 'Pramit', 'pramitmajumdar23555@gmail.com', 2147483647, 12, '2020-03-27', '15:09:00', 'QWER', '1');
 
 -- --------------------------------------------------------
 
@@ -184,6 +196,12 @@ ALTER TABLE `foodlist`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
@@ -216,13 +234,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `foodgallery`
 --
 ALTER TABLE `foodgallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `foodlist`
 --
 ALTER TABLE `foodlist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reservation`

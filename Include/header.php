@@ -19,9 +19,9 @@
 							<li class="head-dpdn">
 								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
-							<li class="head-dpdn">
+						<!--	<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
-							</li>
+							</li>-->
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
@@ -45,7 +45,7 @@
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php">Home</a></li>	
+								<li><a href="home.php">Home</a></li>	
 								<!-- Mega Menu -->
                                 <li><a href="foods.php">Menu</a></li>
 								<li><a href="about.php">About Us</a></li> 

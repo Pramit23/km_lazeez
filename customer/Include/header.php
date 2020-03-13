@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/02c69b64af.js" crossorigin="anonymous"></script>
 <div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
@@ -17,8 +18,7 @@
 								<a href="user_help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 							<li class="head-dpdn">
-								<a href="user_logout.php"><i class="fa fa-question-circle" aria-hidden="true"></i> 
-								logout</a>
+								<a href="user_logout.php"><i class="fa fa-sign-out-alt"></i>Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -43,14 +43,14 @@
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="home.php">Home</a></li>
+								<!--<li><a href="home.php">Home</a></li>-->
                                 <li><a href="user_foods.php">Menu</a></li> 
 								<!-- Mega Menu -->
 								
 								<li><a href="user_about.php">About Us</a></li> 
 							
-								<li><a href="user_icons.php">Announcement</a></li>
-								<li><a href="user_events.php">Our Events</a></li>
+							<!--<li><a href="user_icons.php">Announcement</a></li> -->
+							<!--	<li><a href="user_events.php">Our Events</a></li> -->
 								<li><a href="user_reservation.php">Reservation</a></li> 
 								<li><a href="user_contact.php">Contact Us</a></li>
 							</ul>
@@ -66,4 +66,4 @@
 				</div>
 			</div>
 			<!-- //navigation --> 
-		</div>
+</div>

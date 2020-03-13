@@ -59,7 +59,7 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			<center><h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2></center>
 			</div>
 		</div>
 	</div>
@@ -88,13 +88,13 @@ Url : https://www.facebook.com/mrigankkumar.rai1 */
 
                         $sql = "SELECT * FROM foodgallery";
 
-                        $result = mysqli_query($link, $sql);
+                        $result = mysqli_query($mysqli, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
 
                         while($row = mysqli_fetch_assoc($result)) {
                           echo    "<div class='post-media lfood'>";
-                          echo   '<img class="img-responsive" src="admin/images/' . $row['image'] . '">';                         
+                          echo   '<img class="img-responsive" src="../admin/images/' . $row['image'] . '">';                         
                            echo  "</div>";
                           echo  "<div class='blog-details'>";
                           echo "<div class='post-meta'>";            
