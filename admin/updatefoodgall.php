@@ -5,7 +5,7 @@
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "select * from foodgallery where id=".$id;
-    $result = mysqli_query($link, $sql);
+    $result = mysqli_query($mysqli, $sql);
     if (mysqli_num_rows($result) > 0) {
       $row = mysqli_fetch_assoc($result);
     }else {
@@ -47,12 +47,12 @@
 		if(!isset($errorMsg)){
 			$sql = "update foodgallery set name = '".$name."', image = '".$userPic."'
 					where id=".$id;
-			$result = mysqli_query($link, $sql);
+			$result = mysqli_query($mysqli, $sql);
 			if($result){
 				$successMsg = 'New record updated successfully';
 				header('Location:foodgall.php');
 			}else{
-				$errorMsg = 'Error '.mysqli_error($link);
+				$errorMsg = 'Error '.mysqli_error($mysqli);
 			}
 		}
 

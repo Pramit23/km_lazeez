@@ -32,7 +32,7 @@
                   <li class="nav-item"> <a class="nav-link" href="foodcat.php">Food Category</a></li>
                   <li class="nav-item"> <a class="nav-link" href="foodlist.php">Food list</a></li>
                    <li class="nav-item"> <a class="nav-link" href="foodgall.php">Food Gallery</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="foodpage.php">Food Page Title</a></li>
+                 <!-- <li class="nav-item"> <a class="nav-link" href="foodpage.php">Food Page Title</a></li>-->
                 </ul>
               </div>
             </li>
@@ -45,8 +45,8 @@
               </a>
               <div class="collapse" id="reservation">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="odlist.php">Reservation List</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="odhist.php">Reservation history</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="reserve_list.php">Reservation List</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="reserve_hist.php">Reservation history</a></li>
                 </ul>
               </div>
             </li>

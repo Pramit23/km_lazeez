@@ -37,11 +37,11 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="page-header">
-            <h2> Order List </h2>
+            <h2> Reservation List </h2>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Order List</li>
+                <li class="breadcrumb-item active" aria-current="page">Reservation List</li>
               </ol>
             </nav>
           </div>
@@ -54,7 +54,7 @@
                     require_once "include/config.php";
                     
                     // Attempt select query execution
-                    $sql = "SELECT * FROM orders";
+                    $sql = "SELECT * FROM reservation";
                     if($result = $mysqli->query($sql)){
                         if($result->num_rows > 0){
                     ?>
@@ -63,27 +63,49 @@
                       <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Person</th>
                         <th>Date</th>
-                        <th>Ordered By</th>
-                        <th>Quantity</th>
+                        <th>Time</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Change Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
                                 while($row = $result->fetch_array()){
-                        ?>
+                          ?>
                       <tr>
                         <td><?php echo $row['Id'] ?></td>
-                        <td><?php echo $row['Name'] ?></td>
-                        <td>₹ <?php echo $row['Price'] ?></td>
-                        <td><?php echo $row['Date'] ?></td>
-                        <td><?php echo $row['ordered_by'] ?></td>
-                        <td><?php echo $row['Quantity'] ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td> <?php echo $row['email'] ?></td>
+                        <td><?php echo $row['phone'] ?></td>
+                        <td><?php echo $row['person'] ?></td>
+                        <td><?php echo $row['date']?> </td>
+                        <td><?php echo $row['time'] ?></td>
+                        <td><?php echo $row['message'] ?></td>
+                        <td>
+                          <?php      
+                                        if($row['status']==1){
+
+                                          echo "<p id=str".$row['Id'].">Approved</p>";                                        
+                                        }else{
+                                          echo "<p id=str".$row['Id'].">Not Approved</p>";
+                                        }
+                                  ?>
+                        </td>
+                        <td>
+                          <select onchange="active_disactive_reserve(this.value,<?php echo $row['Id'] ?>)">
+                            <option value="1">Approved</option>
+                            <option value="0">Not Approved</option>
+
+                        </td>
                       </tr>
                       <?php
                                   }
-                        ?>
+                                  ?>
                     </tbody>
                   </table>
                   <?php
@@ -133,7 +155,25 @@
   <script src="js/dashboard.js"></script>
   <script src="js/todolist.js"></script>
   <!-- End custom js for this page -->
-  
+  <script>
+    function active_disactive_reserve(val, Id) {
+      $.ajax({
+        type: "POST",
+        url: "change.php",
+        data: {
+          val: val,
+          Id: Id
+        },
+        success: function (result) {
+          if (result == 1) {
+            $('#str' + Id).html("Appoved");
+          } else {
+            $('#str' + Id).html("Not Appoved");
+          }
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

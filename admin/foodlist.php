@@ -65,46 +65,53 @@
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM foodlist";
-                    if($result = mysqli_query($link, $sql)){
+                    if($result = mysqli_query($mysqli, $sql)){
                         if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-bordered table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Category</th>";
-                                        echo "<th>Price</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
+                        ?>
+                            <table class='table table-bordered table-striped'>
+                            <thead>
+                            <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
                                 while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['category_name'] . "</td>";
-                                        echo "<td>" . $row['price'] . "</td>";
-                                        echo "<td>";
-                                            //echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<i class='fas fa-edit'><a href='updatefood.php?id=". $row['id'] ."'> Edit</a></i>";
-                                            echo "&nbsp";
-                                            echo "&nbsp";
-                                            echo "<i class='fas fa-trash-alt'><a href='deletefood.php?id=". $row['id'] ."'> Delete</a></i>";
-                                        echo "</td>";
-                                    echo "</tr>";
+                                ?>
+                                    <tr>
+                                        <td> <?php echo $row['id'] ?></td>
+                                        <td> <?php echo $row['name'] ?></td>
+                                        <td> <?php echo $row['category_name'] ?></td>
+                                        <td> <?php echo $row['price'] ?></td>
+                                        <td class="text-center">
+                                            <!--<a href='read.php?id="<?php echo $row['id'] ?>"' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>-->
+                                            <i class='fas fa-edit'><a href='updatefood.php?id="<?php echo $row['id'] ?>"'> Edit</a></i>
+                                            &nbsp;
+                                            &nbsp;
+                                            <i class='fas fa-trash-alt'><a href='deletefood.php?id="<?php echo $row['id'] ?>"'> Delete</a></i>
+                                        </td>
+                                    </tr>
+                                <?php     
                                 }
-                                echo "</tbody>";                            
-                            echo "</table>";
+                                ?>
+                                </tbody>                        
+                            </table>
+                        <?php    
                             // Free result set
                             mysqli_free_result($result);
                         } else{
                             echo "<p class='lead'><em>No records were found.</em></p>";
                         }
                     } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
                     }
  
                     // Close connection
-                    mysqli_close($link);
+                    mysqli_close($mysqli);
                     ?>
 
                                 </div>

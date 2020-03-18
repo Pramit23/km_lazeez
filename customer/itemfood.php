@@ -27,9 +27,9 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $image = $row["image"];
                 $category = $row["category"];
                 $price = $row["price"];
-            } else{
-                // URL doesn't contain valid id parameter. Redirect to error page
-                header("location: error.php");
+                 // URL doesn't contain valid id parameter. Redirect to error page
+                 header("location: itemfood.php");
+            } 
                 exit();
             }
             

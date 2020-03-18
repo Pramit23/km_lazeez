@@ -81,7 +81,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         // Prepare a select statement
         $sql = "SELECT * FROM foodlist WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($mysqli, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
@@ -115,7 +115,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_stmt_close($stmt);
         
         // Close connection
-        mysqli_close($link);
+        mysqli_close($mysqli);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error-404.php");

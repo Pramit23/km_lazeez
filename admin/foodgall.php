@@ -5,13 +5,13 @@
   if(isset($_GET['delete'])){
 		$id = $_GET['delete'];
 		$sql = "select * from foodgallery where id = ".$id;
-		$result = mysqli_query($link, $sql);
+		$result = mysqli_query($mysqli, $sql);
 		if(mysqli_num_rows($result) > 0){
 			$row = mysqli_fetch_assoc($result);
 			$image = $row['image'];
 			unlink($upload_dir.$image);
 			$sql = "delete from foodgallery where id=".$id;
-			if(mysqli_query($link, $sql)){
+			if(mysqli_query($mysqli, $sql)){
 				header('location:foodgall.php');
 			}
 		}
@@ -83,16 +83,14 @@
                                                     <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Image</th>
-                                                    <th>
-                                                        <center>Action</center>
-                                                    </th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 <?php
                             $sql = "select * from foodgallery";
-                            $result = mysqli_query($link, $sql);
+                            $result = mysqli_query($mysqli, $sql);
                     				if(mysqli_num_rows($result)){
                     					while($row = mysqli_fetch_assoc($result)){
                           ?>
@@ -103,7 +101,7 @@
                                                     <td><img src="<?php echo $upload_dir.$row['image'] ?>"
                                                             height="100px" width="100px"></td>
 
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="updatefoodgall.php?id=<?php echo $row['id'] ?>"
                                                             class="btn btn-info"><i class="fa fa-user-edit">Edit</i></a>
                                                         <a href="foodgall.php?delete=<?php echo $row['id'] ?>"

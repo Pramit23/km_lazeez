@@ -55,13 +55,13 @@
 								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
+						<!--<div class="cart cart box_1"> 
 							<form action="#" method="post" class="last"> 
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="display" value="1" />
 								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 							</form>   
-						</div> 
+						</div> -->
 					</nav>
 				</div>
 			</div>

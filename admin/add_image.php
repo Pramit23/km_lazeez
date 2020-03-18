@@ -30,12 +30,12 @@
 		if(!isset($errorMsg)){
 			$sql = "insert into foodgallery(name,image)
 					values('".$name."','".$userPic."')";
-			$result = mysqli_query($link, $sql);
+			$result = mysqli_query($mysqli, $sql);
 			if($result){
 				$successMsg = 'New record added successfully';
 				header('Location: foodgall.php');
 			}else{
-				$errorMsg = 'Error '.mysqli_error($link);
+				$errorMsg = 'Error '.mysqli_error($mysqli);
 			}
 		}
   }

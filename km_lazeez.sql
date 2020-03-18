@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2020 at 01:30 PM
+-- Generation Time: Mar 18, 2020 at 09:13 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -82,7 +82,8 @@ CREATE TABLE `foodgallery` (
 --
 
 INSERT INTO `foodgallery` (`id`, `name`, `image`, `category`, `price`) VALUES
-(10, 'Dosa', '1584082354_9894.jpg', 'south indian', '200');
+(10, 'Dosa', '1584082354_9894.jpg', 'south indian', '200'),
+(13, 'Paalak ', '1584510879_1011.png', 'North Indian', '200');
 
 -- --------------------------------------------------------
 
@@ -103,8 +104,7 @@ CREATE TABLE `foodlist` (
 
 INSERT INTO `foodlist` (`id`, `name`, `category_name`, `price`) VALUES
 (1, 'Bread', 'Breakfast', 100),
-(3, 'Raita', 'South Indian', 100),
-(4, 'Raita', 'South Indian', 100);
+(3, 'Raita', 'South Indian', 100);
 
 -- --------------------------------------------------------
 
@@ -116,8 +116,18 @@ CREATE TABLE `orders` (
   `Id` int(11) NOT NULL,
   `Name` text NOT NULL,
   `Price` int(255) NOT NULL,
-  `Quantity` int(11) NOT NULL
+  `Date` varchar(255) NOT NULL,
+  `ordered_by` varchar(255) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`Id`, `Name`, `Price`, `Date`, `ordered_by`, `Quantity`, `Category`) VALUES
+(1, 'Dosa', 200, '18th March ,2020', 'Pramit Majumdar', 2, 'South Indian');
 
 -- --------------------------------------------------------
 
@@ -234,7 +244,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `foodgallery`
 --
 ALTER TABLE `foodgallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `foodlist`
@@ -246,7 +256,7 @@ ALTER TABLE `foodlist`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reservation`

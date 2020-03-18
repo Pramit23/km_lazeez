@@ -64,7 +64,7 @@
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM category";
-                    if($result = mysqli_query($link, $sql)){
+                    if($result = mysqli_query($mysqli, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
@@ -103,7 +103,7 @@
                     }
  
                     // Close connection
-                    mysqli_close($link);
+                    mysqli_close($mysqli);
                     ?>
                                 </div>
 
